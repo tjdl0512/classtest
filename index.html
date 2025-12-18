@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Park Seoyi | Design Engineering Portfolio</title>
+    <title>Park Seoyi | Portfolio</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,128 +21,102 @@
     <nav class="navbar">
         <div class="logo">SEOYI.DESIGN</div>
         <ul class="nav-links">
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="project-neckline.html">Neckline IV</a></li>
+            <li><a href="project-icecream.html">Ice Cream</a></li>
+            <li><a href="project-hetras.html">Hetras</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <span class="greeting">Hello, I'm</span>
-            <h1>PARK SEOYI</h1>
-            <p class="subtitle">Design Engineering Student</p>
-            <p class="description">Creating innovative solutions through logic and creativity.</p>
-            <a href="#profile" class="btn-primary">View Profile</a>
-        </div>
-        <div class="hero-background">
-            <div class="blob blob-1"></div>
-            <div class="blob blob-2"></div>
-            <div class="blob blob-3"></div>
-        </div>
-    </header>
-
-    <section id="profile" class="section profile-section">
-        <div class="container">
-            <h2 class="section-title">Who am I</h2>
-            <div class="profile-card glass-panel">
-                <div class="profile-image-container">
-                    <img src="images/profile.png" alt="Park Seoyi" class="profile-image">
+    <header class="hero profile-hero">
+        <div class="container hero-container">
+            <div class="profile-left reveal-on-scroll">
+                <div class="profile-img-box">
+                    <img src="images/profile.png" alt="Park Seoyi" class="main-profile-img">
                 </div>
-                <div class="profile-info">
-                    <h3>박서이 (Park Seoyi)</h3>
-                    <p class="department"><i class="fas fa-graduation-cap"></i> 디자인공학과 (Design Engineering)</p>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="label">Student ID</span>
-                            <span class="value">20253804</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Email</span>
-                            <span class="value">tjdl01064775686@gmail.com</span>
-                        </div>
+            </div>
+            <div class="profile-right reveal-on-scroll">
+                <span class="greeting">Design Engineering Student</span>
+                <h1>PARK SEOYI</h1>
+                <p class="bio">
+                    논리적 사고와 창의적 감각으로 문제를 해결하는 디자이너 박서이입니다.<br>
+                    사용자의 경험을 깊이 있게 고민하고, 심미성과 실용성을 겸비한 디자인을 추구합니다.
+                </p>
+
+                <div class="info-grid">
+                    <div class="info-row">
+                        <span class="label">Name</span>
+                        <span class="value">박서이 (Park Seoyi)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Department</span>
+                        <span class="value">디자인공학과 (Design Engineering)</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Student ID</span>
+                        <span class="value">20253804</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Email</span>
+                        <span class="value">tjdl01064775686@gmail.com</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="hero-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+    </header>
 
-    <section id="projects" class="section projects-section">
+    <section class="section">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="projects-grid">
 
-            <!-- Project 1 -->
-            <article class="project-card glass-panel reveal-on-scroll">
-                <div class="project-content">
-                    <span class="project-number">01</span>
-                    <h3>Neckline IV</h3>
-                    <p class="project-category">Product Design & Idea Panel</p>
-                    <p class="project-desc">제품 아이디어 및 디자인 판넬 작업 프로젝트입니다. 사용자의 편의성을 고려한 혁신적인 넥라인 디자인을 제안했습니다.</p>
-                </div>
-                <div class="project-image-wrapper" onclick="openModal('images/project1.png')">
-                    <img src="images/project1.png" alt="Neckline IV Panel" class="project-image">
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-            </article>
+                <a href="project-neckline.html" class="project-preview-card glass-panel">
+                    <div class="card-image">
+                        <img src="images/project1.png" alt="Neckline IV">
+                    </div>
+                    <div class="card-content">
+                        <span class="number">01</span>
+                        <h3>Neckline IV</h3>
+                        <p>Product Design & Idea Panel</p>
+                        <span class="link-text">View Project <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
 
-            <!-- Project 2 -->
-            <article class="project-card glass-panel reverse reveal-on-scroll">
-                <div class="project-content">
-                    <span class="project-number">02</span>
-                    <h3>2024 Ice Cream Infographic</h3>
-                    <p class="project-category">Information Design</p>
-                    <p class="project-desc">2024년 아이스크림 트렌드와 데이터에 대한 인포그래픽 프로젝트입니다. 복잡한 데이터를 시각적으로 명확하고 흥미롭게 전달하는 데 중점을
-                        두었습니다.</p>
-                </div>
-                <div class="project-image-wrapper" onclick="openModal('images/project2.png')">
-                    <img src="images/project2.png" alt="Ice Cream Infographic" class="project-image">
-                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                </div>
-            </article>
+                <a href="project-icecream.html" class="project-preview-card glass-panel">
+                    <div class="card-image">
+                        <img src="images/project2.png" alt="Ice Cream Infographic">
+                    </div>
+                    <div class="card-content">
+                        <span class="number">02</span>
+                        <h3>Ice Cream Infographic</h3>
+                        <p>Information Design</p>
+                        <span class="link-text">View Project <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
 
-            <!-- Project 3 -->
-            <article class="project-card glass-panel column-layout reveal-on-scroll">
-                <div class="project-header">
-                    <span class="project-number">03</span>
-                    <div class="text-group">
+                <a href="project-hetras.html" class="project-preview-card glass-panel">
+                    <div class="card-image">
+                        <img src="images/project3_1.png" alt="Hetras Pop-up">
+                    </div>
+                    <div class="card-content">
+                        <span class="number">03</span>
                         <h3>Hetras Pop-up Store</h3>
-                        <p class="project-category">Brand Experience Design (Poster & Leaflet)</p>
-                        <p class="project-desc">팝업스토어를 위한 포스터와 리플릿 디자인 프로젝트입니다. 브랜드의 아이덴티티를 살린 공간 경험을 시각물로 표현했습니다.</p>
+                        <p>Brand Experience Design</p>
+                        <span class="link-text">View Project <i class="fas fa-arrow-right"></i></span>
                     </div>
-                </div>
-                <div class="project-gallery">
-                    <div class="gallery-item" onclick="openModal('images/project3_1.png')">
-                        <img src="images/project3_1.png" alt="Hetras Poster" loading="lazy">
-                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('images/project3_2.png')">
-                        <img src="images/project3_2.png" alt="Hetras Leaflet Outside" loading="lazy">
-                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('images/project3_3.png')">
-                        <img src="images/project3_3.png" alt="Hetras Leaflet Inside" loading="lazy">
-                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                </div>
-            </article>
+                </a>
 
+            </div>
         </div>
     </section>
 
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2>Let's Create Something Together</h2>
-            <p>언제든 연락주세요.</p>
-            <a href="mailto:tjdl01064775686@gmail.com" class="email-link">tjdl01064775686@gmail.com</a>
-            <p class="copyright">&copy; 2025 Park Seoyi. All rights reserved.</p>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 Park Seoyi. All rights reserved.</p>
     </footer>
-
-    <!-- Image Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
 
     <script src="scripts/main.js"></script>
 </body>
