@@ -1,134 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Creative Developer</title>
-    <meta name="description" content="Portfolio of a creative developer specializing in building digital experiences.">
+    <title>Seoy P. Portfolio - Design Engineer</title>
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
-    <div class="noise-overlay"></div>
-    <div class="cursor-glow"></div>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <header class="header">
-        <nav class="nav container">
-            <a href="#" class="logo">PORTFOLIO.</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">SEOY PARK</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero container">
-            <div class="hero-content">
-                <p class="overline">Welcome to my world</p>
-                <h1 class="hero-title">
-                    I build <span class="gradient-text">digital</span><br>
-                    <span class="typing-text"></span><span class="cursor">|</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Creative Developer & UI/UX Enthusiast crafting clean, modern web applications.
-                </p>
-                <div class="cta-group">
-                    <a href="#projects" class="btn btn-primary">View Work</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <!-- Home / Profile Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content fade-in">
+                <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <img src="images/profile.png" alt="Seoy Park Profile" class="profile-img">
+                    </div>
+                    <div class="profile-text">
+                        <span class="greeting">Hello, I'm</span>
+                        <h1 class="name">Seoy Park</h1>
+                        <h2 class="role">Design Engineering Student</h2>
+
+                        <div class="profile-details">
+                            <p><span class="label">Major</span> 디자인공학과 / Design Engineering</p>
+                            <p><span class="label">ID</span> 20253804</p>
+                            <p><span class="label">Email</span> tjdl01064775686@gmail.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <!-- Abstract visual or 3d element placeholder -->
-                <div class="glowing-orb"></div>
-            </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="section container">
-            <h2 class="section-title">About Me</h2>
-            <div class="card glass">
-                <p>
-                    I'm a passionate developer who loves turning complex problems into beautiful, intuitive interface
-                    designs.
-                    I specialize in modern web technologies and always strive for pixel-perfect implementation.
-                </p>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <div class="line"></div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section container">
-            <h2 class="section-title">Selected Works</h2>
+        <section id="projects" class="projects-section">
+            <h2 class="section-title fade-in">Selected Works</h2>
+
             <div class="projects-grid">
+
                 <!-- Project 1 -->
-                <article class="project-card glass">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A futuristic dashboard for analytics.</p>
-                        <div class="tags">
-                            <span>React</span><span>Three.js</span>
+                <article class="project-card fade-in">
+                    <div class="card-image">
+                        <img src="images/project1-neckline.png" alt="Neckline IV Project">
+                        <div class="overlay">
+                            <div class="text">View Detail</div>
                         </div>
                     </div>
+                    <div class="card-info">
+                        <span class="project-category">Product Design</span>
+                        <h3>Neckline IV</h3>
+                        <p class="project-desc">Wearable IV System for Mobility Improvement. 제품을 아이디어화 하여 제작한 판넬 디자인입니다.
+                        </p>
+                    </div>
                 </article>
+
                 <!-- Project 2 -->
-                <article class="project-card glass">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>E-commerce platform with micro-interactions.</p>
-                        <div class="tags">
-                            <span>Next.js</span><span>Stripe</span>
+                <article class="project-card fade-in delay-100">
+                    <div class="card-image">
+                        <img src="images/project2-icecream.png" alt="2024 Ice Cream Infographic">
+                        <div class="overlay">
+                            <div class="text">View Detail</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="project-category">Information Design</span>
+                        <h3>2024 Ice Cream Trends</h3>
+                        <p class="project-desc">Infographic Design analyzing ice cream sales and preferences. 2024년
+                            아이스크림 시장 분석 인포그래픽입니다.</p>
+                    </div>
+                </article>
+
+                <!-- Project 3 (Grid/Gallery Style) -->
+                <article class="project-card full-width fade-in delay-200">
+                    <div class="card-header">
+                        <span class="project-category">Brand Experience Design</span>
+                        <h3>Hetras Popup Store</h3>
+                        <p class="project-desc">Poster and Leaflet Design for Hetras Brand Popup. 팝업스토어의 포스터와 리플릿 디자인
+                            작업물입니다.</p>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="images/project3-hetras1.png" alt="Hetras Poster 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/project3-hetras2.png" alt="Hetras Leaflet 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="images/project3-hetras3.png" alt="Hetras Leaflet 2">
                         </div>
                     </div>
                 </article>
-                <!-- Project 3 -->
-                <article class="project-card glass">
-                    <div class="project-image"></div>
-                    <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>Interactive portfolio concept.</p>
-                        <div class="tags">
-                            <span>HTML/CSS</span><span>GSAP</span>
-                        </div>
-                    </div>
-                </article>
+
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="card glass text-center">
-                <p>Have a project in mind? Let's build something amazing together.</p>
-                <br>
-                <div class="contact-actions">
-                    <a href="mailto:hello@example.com" class="btn btn-primary">Say Hello</a>
-                    <div class="social-links">
-                        <a href="#" class="social-link">Github</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">Twitter</a>
-                    </div>
+        <section id="contact" class="contact-section">
+            <div class="contact-content fade-in">
+                <h2>Let's Create Something Together</h2>
+                <div class="email-box">
+                    <a href="mailto:tjdl01064775686@gmail.com">tjdl01064775686@gmail.com</a>
                 </div>
+                <footer>
+                    <p>&copy; 2025 Seoy Park. All Rights Reserved.</p>
+                </footer>
             </div>
         </section>
     </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 Portfolio. Made with code.</p>
-    </footer>
-
-    <script src="scripts/main.js"></script>
 </body>
 
 </html>

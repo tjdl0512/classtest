@@ -1,71 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio Loaded');
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+    // Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Smooth follow for outline
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Hover effect for links and clickable elements
+    const clickables = document.querySelectorAll('a, .gallery-item, .card-image');
+    clickables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            cursorOutline.style.backgroundColor = 'rgba(29, 29, 31, 0.1)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursorOutline.style.backgroundColor = 'transparent';
         });
     });
 
-    // Fade-in on scroll
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
+    // Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Only animate once
             }
         });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    sections.forEach(section => {
-        section.classList.add('fade-section'); // Base class for fade
-        observer.observe(section);
-    });
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => observer.observe(el));
 
-    // Typing Effect
-    const typingTextSpan = document.querySelector('.typing-text');
-    const cursorSpan = document.querySelector('.cursor');
-
-    if (typingTextSpan) {
-        const textArray = ["experiences.", "interfaces.", "magic."];
-        let textArrayIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        const type = () => {
-            const currentWord = textArray[textArrayIndex];
-
-            if (!isDeleting) {
-                typingTextSpan.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-                if (charIndex > currentWord.length) {
-                    isDeleting = true;
-                    setTimeout(type, 2000);
-                } else {
-                    setTimeout(type, 100);
-                }
-            } else {
-                typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-                if (charIndex === 0) {
-                    isDeleting = false;
-                    textArrayIndex = (textArrayIndex + 1) % textArray.length;
-                    setTimeout(type, 500);
-                } else {
-                    setTimeout(type, 50);
-                }
-            }
-        };
-
-        type();
-
-        // Cursor Blink
-        setInterval(() => {
-            if (cursorSpan) cursorSpan.style.opacity = cursorSpan.style.opacity === '0' ? '1' : '0';
-        }, 500);
+    // Optional: Parallax effect for profile image
+    const profileImg = document.querySelector('.profile-img');
+    if (profileImg) {
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            profileImg.style.transform = `translateY(${scroll * 0.1}px)`;
+        });
     }
 });
