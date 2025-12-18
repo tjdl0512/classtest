@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // Custom Cursor
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
@@ -11,27 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
         cursorDot.style.left = `${posX}px`;
         cursorDot.style.top = `${posY}px`;
 
-        // Smooth follow for outline
+        // Smooth follow
         cursorOutline.animate({
             left: `${posX}px`,
             top: `${posY}px`
         }, { duration: 500, fill: "forwards" });
     });
 
-    // Hover effect for links and clickable elements
-    const clickables = document.querySelectorAll('a, .gallery-item, .card-image');
-    clickables.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursorOutline.style.backgroundColor = 'rgba(29, 29, 31, 0.1)';
-        });
-        el.addEventListener('mouseleave', () => {
-            cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-            cursorOutline.style.backgroundColor = 'transparent';
-        });
-    });
-
-    // Scroll Animations (Intersection Observer)
+    // Scroll Observer for Fade-in Animation
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -42,20 +28,49 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                // Optional: Stop observing once visible to prevent re-triggering
+                // observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
+    const scrollElements = document.querySelectorAll('.reveal-on-scroll');
+    scrollElements.forEach(el => observer.observe(el));
 
-    // Optional: Parallax effect for profile image
-    const profileImg = document.querySelector('.profile-img');
-    if (profileImg) {
-        window.addEventListener('scroll', () => {
-            const scroll = window.pageYOffset;
-            profileImg.style.transform = `translateY(${scroll * 0.1}px)`;
-        });
-    }
+    // Navbar transparency on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+        } else {
+            navbar.style.background = 'rgba(15, 23, 42, 0.7)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+
+    // Modal Functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Made global to be called from HTML onclick
+    window.openModal = (imageSrc) => {
+        modal.style.display = "flex"; // Changed to flex for centering
+        modalImg.src = imageSrc;
+        document.body.style.overflow = 'hidden'; // Disable scroll
+    };
+
+    closeModal.onclick = () => {
+        modal.style.display = "none";
+        document.body.style.overflow = 'auto'; // Enable scroll
+    };
+
+    // Close on outside click
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = 'auto';
+        }
+    };
 });

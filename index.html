@@ -4,17 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seoy P. Portfolio - Design Engineer</title>
-
-    <!-- Google Fonts -->
+    <title>Park Seoyi | Design Engineering Portfolio</title>
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -22,118 +19,132 @@
     <div class="cursor-outline"></div>
 
     <nav class="navbar">
-        <div class="logo">SEOY PARK</div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <div class="logo">SEOYI.DESIGN</div>
+        <ul class="nav-links">
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
 
-    <main>
-        <!-- Home / Profile Section -->
-        <section id="home" class="hero-section">
-            <div class="hero-content fade-in">
-                <div class="profile-container">
-                    <div class="profile-image-wrapper">
-                        <img src="images/profile.png" alt="Seoy Park Profile" class="profile-img">
-                    </div>
-                    <div class="profile-text">
-                        <span class="greeting">Hello, I'm</span>
-                        <h1 class="name">Seoy Park</h1>
-                        <h2 class="role">Design Engineering Student</h2>
+    <header class="hero">
+        <div class="hero-content">
+            <span class="greeting">Hello, I'm</span>
+            <h1>PARK SEOYI</h1>
+            <p class="subtitle">Design Engineering Student</p>
+            <p class="description">Creating innovative solutions through logic and creativity.</p>
+            <a href="#profile" class="btn-primary">View Profile</a>
+        </div>
+        <div class="hero-background">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </header>
 
-                        <div class="profile-details">
-                            <p><span class="label">Major</span> 디자인공학과 / Design Engineering</p>
-                            <p><span class="label">ID</span> 20253804</p>
-                            <p><span class="label">Email</span> tjdl01064775686@gmail.com</p>
+    <section id="profile" class="section profile-section">
+        <div class="container">
+            <h2 class="section-title">Who am I</h2>
+            <div class="profile-card glass-panel">
+                <div class="profile-image-container">
+                    <img src="images/profile.png" alt="Park Seoyi" class="profile-image">
+                </div>
+                <div class="profile-info">
+                    <h3>박서이 (Park Seoyi)</h3>
+                    <p class="department"><i class="fas fa-graduation-cap"></i> 디자인공학과 (Design Engineering)</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="label">Student ID</span>
+                            <span class="value">20253804</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Email</span>
+                            <span class="value">tjdl01064775686@gmail.com</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="scroll-indicator">
-                <span>SCROLL</span>
-                <div class="line"></div>
-            </div>
-        </section>
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects-section">
-            <h2 class="section-title fade-in">Selected Works</h2>
-
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-                <article class="project-card fade-in">
-                    <div class="card-image">
-                        <img src="images/project1-neckline.png" alt="Neckline IV Project">
-                        <div class="overlay">
-                            <div class="text">View Detail</div>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="project-category">Product Design</span>
-                        <h3>Neckline IV</h3>
-                        <p class="project-desc">Wearable IV System for Mobility Improvement. 제품을 아이디어화 하여 제작한 판넬 디자인입니다.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card fade-in delay-100">
-                    <div class="card-image">
-                        <img src="images/project2-icecream.png" alt="2024 Ice Cream Infographic">
-                        <div class="overlay">
-                            <div class="text">View Detail</div>
-                        </div>
-                    </div>
-                    <div class="card-info">
-                        <span class="project-category">Information Design</span>
-                        <h3>2024 Ice Cream Trends</h3>
-                        <p class="project-desc">Infographic Design analyzing ice cream sales and preferences. 2024년
-                            아이스크림 시장 분석 인포그래픽입니다.</p>
-                    </div>
-                </article>
-
-                <!-- Project 3 (Grid/Gallery Style) -->
-                <article class="project-card full-width fade-in delay-200">
-                    <div class="card-header">
-                        <span class="project-category">Brand Experience Design</span>
-                        <h3>Hetras Popup Store</h3>
-                        <p class="project-desc">Poster and Leaflet Design for Hetras Brand Popup. 팝업스토어의 포스터와 리플릿 디자인
-                            작업물입니다.</p>
-                    </div>
-
-                    <div class="gallery-grid">
-                        <div class="gallery-item">
-                            <img src="images/project3-hetras1.png" alt="Hetras Poster 1">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/project3-hetras2.png" alt="Hetras Leaflet 1">
-                        </div>
-                        <div class="gallery-item">
-                            <img src="images/project3-hetras3.png" alt="Hetras Leaflet 2">
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <div class="contact-content fade-in">
-                <h2>Let's Create Something Together</h2>
-                <div class="email-box">
-                    <a href="mailto:tjdl01064775686@gmail.com">tjdl01064775686@gmail.com</a>
+            <!-- Project 1 -->
+            <article class="project-card glass-panel reveal-on-scroll">
+                <div class="project-content">
+                    <span class="project-number">01</span>
+                    <h3>Neckline IV</h3>
+                    <p class="project-category">Product Design & Idea Panel</p>
+                    <p class="project-desc">제품 아이디어 및 디자인 판넬 작업 프로젝트입니다. 사용자의 편의성을 고려한 혁신적인 넥라인 디자인을 제안했습니다.</p>
                 </div>
-                <footer>
-                    <p>&copy; 2025 Seoy Park. All Rights Reserved.</p>
-                </footer>
-            </div>
-        </section>
-    </main>
+                <div class="project-image-wrapper" onclick="openModal('images/project1.png')">
+                    <img src="images/project1.png" alt="Neckline IV Panel" class="project-image">
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card glass-panel reverse reveal-on-scroll">
+                <div class="project-content">
+                    <span class="project-number">02</span>
+                    <h3>2024 Ice Cream Infographic</h3>
+                    <p class="project-category">Information Design</p>
+                    <p class="project-desc">2024년 아이스크림 트렌드와 데이터에 대한 인포그래픽 프로젝트입니다. 복잡한 데이터를 시각적으로 명확하고 흥미롭게 전달하는 데 중점을
+                        두었습니다.</p>
+                </div>
+                <div class="project-image-wrapper" onclick="openModal('images/project2.png')">
+                    <img src="images/project2.png" alt="Ice Cream Infographic" class="project-image">
+                    <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card glass-panel column-layout reveal-on-scroll">
+                <div class="project-header">
+                    <span class="project-number">03</span>
+                    <div class="text-group">
+                        <h3>Hetras Pop-up Store</h3>
+                        <p class="project-category">Brand Experience Design (Poster & Leaflet)</p>
+                        <p class="project-desc">팝업스토어를 위한 포스터와 리플릿 디자인 프로젝트입니다. 브랜드의 아이덴티티를 살린 공간 경험을 시각물로 표현했습니다.</p>
+                    </div>
+                </div>
+                <div class="project-gallery">
+                    <div class="gallery-item" onclick="openModal('images/project3_1.png')">
+                        <img src="images/project3_1.png" alt="Hetras Poster" loading="lazy">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal('images/project3_2.png')">
+                        <img src="images/project3_2.png" alt="Hetras Leaflet Outside" loading="lazy">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item" onclick="openModal('images/project3_3.png')">
+                        <img src="images/project3_3.png" alt="Hetras Leaflet Inside" loading="lazy">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>Let's Create Something Together</h2>
+            <p>언제든 연락주세요.</p>
+            <a href="mailto:tjdl01064775686@gmail.com" class="email-link">tjdl01064775686@gmail.com</a>
+            <p class="copyright">&copy; 2025 Park Seoyi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
